@@ -11,18 +11,28 @@ import { MaterialModule } from './Material.module';
 import { RouterModule } from '@angular/router';
 import { CustomcounterComponent } from './component/customcounter/customcounter.component';
 import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './component/home/home.component';
+import { BlogComponent } from './component/blog/blog.component';
+import { CounterComponent } from './component/counter/counter.component';
+import { AppRoutingModule } from './app-routing.module';
+import { MenuheaderComponent } from './component/menuheader/menuheader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CounterbuttonComponent,
     CounterdisplayComponent,
-    CustomcounterComponent
+    CustomcounterComponent,
+    HomeComponent,
+    BlogComponent,
+    CounterComponent,
+    MenuheaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
+    AppRoutingModule,
     StoreModule.forRoot({xyz: counterReducer}),
     MaterialModule,
     FormsModule
