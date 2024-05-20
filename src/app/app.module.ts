@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -16,6 +16,9 @@ import { BlogComponent } from './component/blog/blog.component';
 import { CounterComponent } from './component/counter/counter.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MenuheaderComponent } from './component/menuheader/menuheader.component';
+import { blogReducer } from './shared/store/Blog/Blog.reducer';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AppState } from './shared/store/Global/app.state';
 
 @NgModule({
   declarations: [
@@ -33,9 +36,10 @@ import { MenuheaderComponent } from './component/menuheader/menuheader.component
     BrowserAnimationsModule,
     RouterModule,
     AppRoutingModule,
-    StoreModule.forRoot({xyz: counterReducer}),
+    StoreModule.forRoot(AppState),
     MaterialModule,
-    FormsModule
+    FormsModule,
+    StoreDevtoolsModule.instrument({ maxAge: false, logOnly: !isDevMode() })
   ],
   providers: [],
   bootstrap: [AppComponent]
