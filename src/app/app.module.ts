@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './Material.module';
 import { RouterModule } from '@angular/router';
 import { CustomcounterComponent } from './component/customcounter/customcounter.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './component/home/home.component';
 import { BlogComponent } from './component/blog/blog.component';
 import { CounterComponent } from './component/counter/counter.component';
@@ -19,6 +19,7 @@ import { MenuheaderComponent } from './component/menuheader/menuheader.component
 import { blogReducer } from './shared/store/Blog/Blog.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppState } from './shared/store/Global/app.state';
+import { AddblogComponent } from './component/addblog/addblog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppState } from './shared/store/Global/app.state';
     HomeComponent,
     BlogComponent,
     CounterComponent,
-    MenuheaderComponent
+    MenuheaderComponent,
+    AddblogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,7 @@ import { AppState } from './shared/store/Global/app.state';
     StoreModule.forRoot(AppState),
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     StoreDevtoolsModule.instrument({ maxAge: false, logOnly: !isDevMode() })
   ],
   providers: [],

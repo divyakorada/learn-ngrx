@@ -1,4 +1,6 @@
+<div style="text-align: center;">
 <h1>Technology Blogs</h1>
+<button (click)="addBlog()" mat-raised-button color="primary">Add Blog</button>
 
 <mat-card *ngFor="let item of blogList">
     <mat-card-header>
@@ -8,3 +10,4 @@
         <p>{{item.description}}</p>
     </mat-card-content>
 </mat-card>
+</div>
